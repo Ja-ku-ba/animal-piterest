@@ -13,11 +13,10 @@
   height: 48px;
   width: 100%;
   background-color: rgb(241, 241, 241);
-  border-radius: 24px;
 }
 
 .search-icon {
-  margin-left: -8px;
+  margin-left: -12px;
 }
 
 .nav-input {
