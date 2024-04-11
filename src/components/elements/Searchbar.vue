@@ -1,8 +1,12 @@
 <script setup></script>
 
 <template>
-  <form class="search-container center nav-box">
-    <img src="../../assets/search.svg" class="logo search-icon" alt="search" />
+  <form class="search-container center-inline nav-box">
+    <img
+      src="../../assets/icons/search.svg"
+      class="logo search-icon"
+      alt="search"
+    />
 
     <input class="nav-input" type="text" placeholder="Szukaj" />
   </form>

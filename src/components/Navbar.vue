@@ -4,16 +4,20 @@ import Searchbar from "./elements/Searchbar.vue"
 
 <template>
   <nav class="navbar-container">
-    <ul class="center nav-list-container">
-      <li class="center icon-wraper">
-        <img src="../assets/dog_icon.svg" class="icon" alt="Strona główna" />
+    <ul class="center-inline nav-list-container">
+      <li class="center-inline icon-wraper">
+        <img
+          src="../assets/icons/dog_icon.svg"
+          class="icon"
+          alt="Strona główna"
+        />
       </li>
-      <li class="center">
+      <li class="center-inline">
         <a class="main-page-link nav-box" href="/"
           ><span class="main-page-text">Strona główna</span></a
         >
       </li>
-      <li class="center">
+      <li class="center-inline">
         <a class="create-page-link nav-box" href="/"
           ><span class="main-page-text">Utwórz</span></a
         >
@@ -21,21 +25,25 @@ import Searchbar from "./elements/Searchbar.vue"
       <li class="searchbar-wraper">
         <Searchbar />
       </li>
-      <li class="center icon-wraper">
+      <li class="center-inline icon-wraper">
         <img
-          src="../assets/notifications.svg"
+          src="../assets/icons/notifications.svg"
           class="icon"
           alt="Powiadomienia"
         />
       </li>
-      <li class="center icon-wraper">
-        <img src="../assets/chat.svg" class="icon" alt="Wiadomości" />
+      <li class="center-inline icon-wraper">
+        <img src="../assets/icons/chat.svg" class="icon" alt="Wiadomości" />
       </li>
-      <li class="center icon-wraper">
-        <img src="../assets/account.svg" class="icon" alt="Profil" />
+      <li class="center-inline icon-wraper">
+        <img src="../assets/icons/account.svg" class="icon" alt="Profil" />
       </li>
-      <li class="center icon-wraper">
-        <img src="../assets/arrow_drop_down.svg" class="icon" alt="Opcje" />
+      <li class="center-inline icon-wraper">
+        <img
+          src="../assets/icons/arrow_drop_down.svg"
+          class="icon"
+          alt="Opcje"
+        />
       </li>
     </ul>
   </nav>
@@ -53,15 +61,6 @@ import Searchbar from "./elements/Searchbar.vue"
   align-items: center;
   background-color: rgba(255, 255, 255, 1);
   overflow: hidden;
-}
-
-.center {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  padding: 0;
-  align-items: center;
-  margin: 0;
 }
 
 .nav-list-container {
@@ -103,6 +102,7 @@ import Searchbar from "./elements/Searchbar.vue"
   height: 48px;
   display: flex;
   align-items: center;
+  text-wrap: nowrap;
 }
 
 .create-page-link {
