@@ -1,90 +1,36 @@
 <template>
-  <div class="pin_container">
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/dog.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/bear.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/peungin.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/fox.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/hamster.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/cat.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/bear.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/peungin.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/hedgehog.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/deer.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/bear.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/peungin.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/dog.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/bear.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/peungin.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/bear.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/peungin.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/bear.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/peungin.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/dog.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/bear.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/peungin.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/bear.jpg" />
-    </div>
-    <div class="card">
-      <img @load="setBorder" class="img" src="../assets/images/peungin.jpg" />
+  <div class="pin_container" @load="randomizeAnimals">
+    <div class="card" v-for="animal in randomAniamls">
+      <SingleFeedPost :dataProp="animal" :hover="hover" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue"
+import SingleFeedPost from "./elements/SingleFeedPost.vue"
 
-const height = ref(null)
-function setBorder(e) {
-  height.value = e.target.height
-  const rowEnd = Math.ceil(height.value / 10) + 2
-  console.log(rowEnd)
-  e.target.parentElement.style = `grid-row-end: span ${rowEnd}`
+const animals = [
+  "bear",
+  "cat",
+  "deer",
+  "dog",
+  "fox",
+  "hamster",
+  "hedgehog",
+  "peungin",
+]
+
+function shuffleArray(array) {
+  const arr = []
+  for (let n = 0; n < 20; n++) {
+    for (let i = array.length - 1; i > 0; i--) {
+      arr.push(array[Math.floor(Math.random() * (i + 1))])
+    }
+  }
+  return arr
 }
+const randomAniamls = ref(shuffleArray(animals))
 </script>
 
 <style scoped>
@@ -101,14 +47,10 @@ function setBorder(e) {
 }
 
 .card {
+  position: relative;
   padding: 0;
   margin: 15px 10px;
   border-radius: var(--card_border_radius);
   background-color: wheat;
-}
-
-.img {
-  border-radius: 16px;
-  width: var(--card-with);
 }
 </style>
