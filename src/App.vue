@@ -1,13 +1,10 @@
 <script setup>
 import Navbar from "./components/Navbar.vue"
-import TagsCarousel from "./components/TagsCarousel.vue"
-import Feed from "./components/Feed.vue"
 </script>
 
 <template>
   <Navbar />
-  <TagsCarousel />
-  <Feed />
+  <router-view></router-view>
 </template>
 
 <style scoped></style>
