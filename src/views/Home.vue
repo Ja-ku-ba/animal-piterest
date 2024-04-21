@@ -4,8 +4,8 @@ import Feed from "../components/Feed.vue"
 </script>
 
 <template>
-  <TagsCarousel />
-  <Feed />
+  <tags-carousel />
+  <feed />
 </template>
 
 <style scoped></style>

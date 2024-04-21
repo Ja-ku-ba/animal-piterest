@@ -3,7 +3,7 @@
   <img
     @load="setLimit"
     class="feed-post"
-    :src="`/src/assets/images/${dataProp}.jpg`"
+    :src="`/src/assets/images/${animal}.jpg`"
     :id="`${uuid}`"
     @mouseover="hover = true"
     @mouseout="hover = false"
@@ -26,7 +26,7 @@ function setLimit(e) {
 }
 
 const props = defineProps({
-  dataProp: {
+  animal: {
     type: String,
   },
   hover: {

@@ -6,11 +6,13 @@ import Searchbar from "./elements/Searchbar.vue"
   <nav class="navbar-container">
     <ul class="center-inline nav-list-container">
       <li class="center-inline icon-wraper">
-        <img
-          src="../assets/icons/dog_icon.svg"
-          class="icon"
-          alt="Strona główna"
-        />
+        <router-link to="/">
+          <img
+            src="../assets/icons/dog_icon.svg"
+            class="icon"
+            alt="Strona główna"
+          />
+        </router-link>
       </li>
       <li class="center-inline">
         <a class="main-page-link nav-box" href="/"
@@ -49,24 +51,7 @@ import Searchbar from "./elements/Searchbar.vue"
   </nav>
 </template>
 
-<style scoped>
-.navbar-container {
-  position: sticky;
-  top: 0;
-  height: 80px;
-  /* width: calc(100% - 32px); */
-  margin: 0;
-  padding: 0 0 0 16px;
-  display: flex;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 1);
-  overflow: hidden;
-}
-
-.nav-list-container {
-  width: 100%;
-}
-
+<style>
 .icon-wraper {
   margin: 0 -6px;
   border-radius: 50%;
@@ -84,6 +69,25 @@ import Searchbar from "./elements/Searchbar.vue"
 
 .icon {
   margin-left: -12px;
+}
+</style>
+
+<style scoped>
+.navbar-container {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  /* width: calc(100% - 32px); */
+  margin: 0;
+  padding: 0 0 0 16px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: hidden;
+}
+
+.nav-list-container {
+  width: 100%;
 }
 
 .searchbar-wraper {

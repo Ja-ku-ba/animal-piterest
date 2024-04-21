@@ -5,9 +5,9 @@ import Post from "./views/Post.vue"
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-    { path: "/:index?", component: Home, props: true },
+    { path: "/", component: Home, props: true },
     {
-      path: "/post",
+      path: "/post/:id",
       component: Post,
     },
   ],

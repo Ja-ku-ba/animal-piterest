@@ -1,8 +1,13 @@
 <template>
   <div class="pin_container" @load="randomizeAnimals">
-    <div class="card" v-for="animal in randomAniamls">
-      <SingleFeedPost :dataProp="animal" :hover="hover" />
-    </div>
+    <router-link
+      :to="{ path: `post/${animal}` }"
+      class="card"
+      v-for="animal in randomAniamls"
+      :animal="animal"
+    >
+      <SingleFeedPost :animal="animal" />
+    </router-link>
   </div>
 </template>
 
